@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Function to install the Cali Web Design Panel
-function install_caliwebpanel() {
+# Function to install the Nexure Solutions Panel
+function install_nexuresolutions() {
     # Install and configure MariaDB
     if [ ! -x "$(command -v mysql)" ]; then
         sudo apt update
@@ -157,12 +157,12 @@ EOF
     sudo systemctl reload nginx
 
     # Display success message
-    echo "Cali Web Design Panel installed and configured for $domain_name."
+    echo "Nexure Solutions Panel installed and configured for $domain_name."
     echo "To access your panel please visit https://$domain_name"
 }
 
-# Function to uninstall the Cali Web Design Panel
-function uninstall_caliwebpanel() {
+# Function to uninstall the Nexure Solutions Panel
+function uninstall_nexuresolutions() {
     # Uninstall Nginx
     if [ -x "$(command -v nginx)" ]; then
         # Stop and disable Nginx service
@@ -209,19 +209,19 @@ function uninstall_caliwebpanel() {
     fi
 
     # Display success message
-    echo "The Cali Web Design Panel has been completely uninstalled."
+    echo "The Nexure Solutions Panel has been completely uninstalled."
 }
 
 # Main script starts here
-echo "Welcome to Cali Web Design Panel Installation/Removal"
+echo "Welcome to Nexure Solutions Panel Installation/Removal"
 echo "-----------------------------------------------------"
-echo "1. Install Cali Web Design Panel"
-echo "2. Uninstall Cali Web Design Panel"
+echo "1. Install Nexure Solutions Panel"
+echo "2. Uninstall Nexure Solutions Panel"
 echo "-----------------------------------------------------"
 read -p "Enter your choice (1 or 2): " choice
 
 case $choice in
-    1) install_caliwebpanel ;;
-    2) uninstall_caliwebpanel ;;
+    1) install_nexuresolutions ;;
+    2) uninstall_nexuresolutions ;;
     *) echo "Invalid choice. Please enter either 1 or 2." ;;
 esac
